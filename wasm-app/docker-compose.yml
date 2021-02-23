@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  wasm-app:
+    container_name: wasm-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+    ports:
+      - '8000:8000'
+    environment:
+      - USER=wasm-app
